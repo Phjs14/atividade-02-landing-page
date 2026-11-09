@@ -55,7 +55,7 @@ h2 {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 6px 16px rgba(255, 107, 157, 0.4);
+  box-shadow: 0 6px 16px rgba(8, 76, 185, 0.35);
   transition: background 0.3s, transform 0.3s;
 }
 
@@ -97,26 +97,119 @@ h2 {
 .link-secundario {
   margin-left: 16px;
   color: var(--vinho);
+  font-weight: 600;
 }
 
+/* --- MELHORIA 1: CELULAR COM DASHBOARD --- */
 .celular {
-  width: 220px;
-  height: 400px;
+  position: relative;
+  width: 245px;
+  height: 430px;
   margin: 0 auto;
   border: 12px solid var(--escuro);
-  border-radius: 36px;
-  background: white;
-  padding: 40px 18px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 38px;
+  background: #f8fafc;
+  padding: 28px 14px 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   animation: flutuar 3s ease-in-out infinite;
 }
 
-.tela p {
-  background: var(--claro);
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 12px;
+.notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 14px;
+  background: var(--escuro);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.tela {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.app-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--escuro);
+}
+
+.streak {
+  background: #ffedd5;
+  color: #ea580c;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.app-resumo {
+  background: linear-gradient(135deg, var(--rosa), var(--vinho));
+  color: white;
+  padding: 12px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.app-resumo small {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.app-resumo strong {
+  font-size: 1.05rem;
+  color: white;
+}
+
+.mini-barra {
+  background: rgba(255, 255, 255, 0.25);
+  height: 7px;
+  border-radius: 4px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.mini-barra span {
+  display: block;
+  height: 100%;
+  background: #38bdf8;
+  border-radius: 4px;
+}
+
+.app-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tarefa {
+  background: white;
+  border-radius: 10px;
+  padding: 9px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tarefa small {
+  color: #64748b;
+  font-size: 0.72rem;
+}
+
+.tarefa.feita {
+  border-left: 4px solid #22c55e;
+  opacity: 0.8;
 }
 
 @keyframes flutuar {
@@ -125,7 +218,7 @@ h2 {
   100% { transform: translateY(0); }
 }
 
-.vantagens, .como, .planos {
+.vantagens, .como, .depoimentos, .planos {
   max-width: 1000px;
   margin: 0 auto;
   padding: 60px 24px;
@@ -143,10 +236,51 @@ h2 {
   padding: 28px;
   text-align: center;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .icone {
   font-size: 44px;
+}
+
+/* --- MELHORIA 2: DEPOIMENTOS --- */
+.depo-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.estrelas {
+  font-size: 0.9rem;
+}
+
+.texto-depo {
+  font-style: italic;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.autor {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.autor strong {
+  color: var(--vinho);
+  font-size: 0.95rem;
+}
+
+.autor span {
+  font-size: 0.8rem;
+  color: #64748b;
 }
 
 .passos {
@@ -182,7 +316,7 @@ h2 {
 
 footer {
   background: var(--escuro);
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 24px;
   font-size: 0.9rem;
