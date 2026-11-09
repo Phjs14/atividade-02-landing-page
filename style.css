@@ -316,7 +316,7 @@ h2 {
 
 footer {
   background: var(--escuro);
-  color: rgb(255, 255, 255);
+  color: white;
   text-align: center;
   padding: 24px;
   font-size: 0.9rem;
